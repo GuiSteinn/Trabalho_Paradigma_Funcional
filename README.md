@@ -1,6 +1,6 @@
 # Trabalho — Streaming / Assinaturas (Pró-rata) 
 
-# Desenvolvido por: @Guilherme Stein e @Samuel Wiggers
+Desenvolvido por: @Guilherme Stein e @Samuel Wiggers
 
 Este é um exemplo simples em JavaScript (HTML + CSS + JS) para demonstrar conceitos de programação funcional aplicados a streaming/assinaturas.
 
