@@ -10,7 +10,7 @@ Funcionalidades:
 - Validação pura das entradas
 - Cálculo pró-rata por dias em cada plano
 - Suporte a descontos promocionais por segmento e multa por cancelamento (opcional)
-- Métricas simples: receita total por mês, ARPU, churn (estimado)
+- Métricas simples: receita total por mês, Receita Média por Usuário, taxa de rotatividade de clientes (estimado)
 
 Como usar:
 1. Abra o arquivo `index.html` em um navegador.
