@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Trabalho - Streaming / Assinaturas (Pró-rata)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="logo"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="url(#grad)"/><text x="50%" y="55%" text-anchor="middle" fill="#fff" font-size="18" font-family="Arial" dy=".3em">S</text><defs><linearGradient id="grad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse"><stop stop-color="#ff5a5f"/><stop offset="1" stop-color="#ff8a65"/></linearGradient></defs></svg></div>
+      <div class="branding">
+        <h1>Streaming / Assinaturas — Cálculo Pró-rata</h1>
+        <small class="ai-note">Programa Paradigma Funcional.</small>
+      </div>
+    </header>
+
+    <main>
+      <section class="input">
+        <h2>Entrar evento</h2>
+        <p>Use o formulário abaixo para adicionar eventos (mais fácil que JSON). Os eventos são mantidos em uma lista imutável e podem ser exportados como JSON.</p>
+
+        <form id="eventForm">
+          <div class="row">
+            <label>Usuário (userId)
+              <input type="text" id="f_userId" required placeholder="ex: u1" />
+            </label>
+            <label>Tipo
+              <select id="f_type">
+                <option value="subscribe">subscribe</option>
+                <option value="change">change</option>
+                <option value="cancel">cancel</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="row">
+            <label>Plano
+              <select id="f_plan">
+                <option value="basic">basic</option>
+                <option value="standard">standard</option>
+                <option value="premium">premium</option>
+              </select>
+            </label>
+            <label>Data
+              <input type="date" id="f_date" required />
+            </label>
+          </div>
+
+          <div class="row">
+            <label>Promo desconto (%)
+              <input type="number" id="f_promo" min="0" max="100" step="1" placeholder="0" />
+            </label>
+            <label>Penalidade (%)
+              <input type="number" id="f_penalty" min="0" max="100" step="1" placeholder="0" />
+            </label>
+          </div>
+
+          <div class="controls">
+            <button type="submit" id="addEvent">Adicionar Evento</button>
+            <button type="button" id="loadSample" class="secondary">Carregar Exemplo</button>
+            <button type="button" id="exportJson" class="secondary">Exportar JSON</button>
+            <button type="button" id="compute">Calcular</button>
+          </div>
+        </form>
+
+        <h3>Eventos atuais</h3>
+        <div id="eventList" class="event-list"></div>
+
+        <hr />
+        <p class="help">Os eventos são gerenciados pela lista acima. Use <strong>Exportar JSON</strong> para salvar ou importar externamente.</p>
+      </section>
+
+      <section class="output">
+        <div class="hero">
+          <h2>Resultados</h2>
+          <p class="muted">Resumo mensal, Receita Média por Usuário e taxa de rotatividade de clientes estimado.</p>
+        </div>
+        <div id="results"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Projeto simples para aplicar conceitos de programação funcional: funções puras, imutabilidade e funções de ordem superior (map/filter/reduce).</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
